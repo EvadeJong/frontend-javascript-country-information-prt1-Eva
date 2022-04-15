@@ -6,12 +6,21 @@ ul {
     width: 45px;
 }
 
-.orange{
-    color:orange;
+.gray{
+    color: gray;
 }
 .blue{
     color: blue;
 }
 .red{
     color: red;
+}
+.green{
+    color: green;
+}
+.yellow{
+    color: yellow;
+}
+.purple{
+    color: purple;
 }
