@@ -1,8 +1,14 @@
 import axios from 'axios';
+let inputValue = '';
+let displayInformationField = '';
 
-let inputValue;
 function logSubmit(event) {
-    //log.textContent = `Form Submitted!`;
+
+while(displayInformationField.firstChild){
+        displayInformationField.removeChild(displayInformationField.firstChild)
+    }
+
+    log.textContent = ``;
     event.preventDefault();
     inputValue = document.getElementById("inputField").value;
     searchCountry(inputValue);
@@ -37,16 +43,15 @@ async function searchCountry(country) {
         countryName.setAttribute('class', countryName);
         countryName.textContent = `${countryInformation.data[0].name}`;
 
-        const displayInformationField = document.getElementById('country-information');
+        displayInformationField = document.getElementById('country-information');
         displayInformationField.appendChild(imgSearchTag);
         displayInformationField.appendChild(countryName);
-
-        console.log(imgSearchTag);
         displayInformationField.setAttribute('class', countryInformation.data[0].name);
+
         const textField = document.createTextNode(` ${countryInformation.data[0].name} is situated in ${countryInformation.data[0].subregion}. It has a population of ${countryInformation.data[0].population} people. `);
         displayInformationField.appendChild(textField);
-
         displayInformationField.appendChild(newLine);
+
         const textFieldCapital = document.createTextNode(`The capital is ${countryInformation.data[0].capital}.`);
         displayInformationField.appendChild(textFieldCapital);
 
