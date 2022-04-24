@@ -71,7 +71,6 @@ async function fetchCountries(){
 
             const listItem = document.createElement('li');
 
-
             listItem.appendChild(imgTag);
 
             const countryName = document.createElement('h3');
